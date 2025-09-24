@@ -1,17 +1,19 @@
 backend:
   name: github
-  repo: antidolgi/pravdavologda.rf  # ← ЗАМЕНИТЕ на ваш GitHub логин и имя репозитория
+  repo: antidolgi/pravdavologda.rf
 
-media_folder: "static/images"
-public_folder: "/images"
+local_backend: false
+
+media_folder: static/images
+public_folder: /images
 
 collections:
-  - name: "services"
-    label: "Услуги"
-    folder: "content/services"
+  - name: services
+    label: Услуги
+    folder: content/services
     create: true
     fields:
-      - { label: "Заголовок", name: "title", widget: "string" }
-      - { label: "Цена (в рублях)", name: "price", widget: "number" }
-      - { label: "Описание", name: "description", widget: "text" }
-      - { label: "Категория", name: "category", widget: "select", options: ["Физические лица", "Бизнес"] }
+      - { name: title, label: Заголовок, widget: string }
+      - { name: price, label: Цена, widget: number }
+      - { name: description, label: Описание, widget: text }
+      - { name: category, label: Категория, widget: select, options: ["Физические лица", "Бизнес"] }
