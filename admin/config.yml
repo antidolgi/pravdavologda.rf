@@ -2,8 +2,6 @@ backend:
   name: github
   repo: antidolgi/pravdavologda.rf
 
-local_backend: false
-
 media_folder: static/images
 public_folder: /images
 
