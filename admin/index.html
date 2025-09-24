@@ -3,10 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Админка сайта</title>
+  <title>Админка</title>
 </head>
 <body>
-  <!-- Decap CMS загрузится автоматически из config.yml -->
   <script src="https://cdn.jsdelivr.net/npm/@decap/cms@1.0.0/dist/decap-cms.min.js"></script>
+  <script>
+    window.CMS_MANUAL_INIT = true;
+    CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'antidolgi/pravdavologda.rf'
+        },
+        media_folder: 'static/images',
+        public_folder: '/images',
+        collections: [{
+          name: 'services',
+          label: 'Услуги',
+          folder: 'content/services',
+          create: true,
+          fields: [
+            { name: 'title', label: 'Заголовок', widget: 'string' },
+            { name: 'price', label: 'Цена', widget: 'number' },
+            { name: 'description', label: 'Описание', widget: 'text' },
+            { name: 'category', label: 'Категория', widget: 'select', 
+              options: ['Физические лица', 'Бизнес'] }
+          ]
+        }]
+      }
+    });
+  </script>
 </body>
 </html>
