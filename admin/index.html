@@ -4,31 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Админка</title>
-  <script type="module">
-    import { init } from 'https://cdn.jsdelivr.net/npm/@decap/cms@1.6.0/dist/decap-cms-app.js';
-
-    init({
-      backend: {
-        name: 'github',
-        repo: 'antidolgi/pravdavologda.rf'
-      },
-      media_folder: 'static/images',
-      public_folder: '/images',
-      collections: [{
-        name: 'services',
-        label: 'Услуги',
-        folder: 'content/services',
-        create: true,
-        fields: [
-          { name: 'title', label: 'Заголовок', widget: 'string' },
-          { name: 'price', label: 'Цена', widget: 'number' },
-          { name: 'description', label: 'Описание', widget: 'text' },
-          { name: 'category', label: 'Категория', widget: 'select', 
-            options: ['Физические лица', 'Бизнес'] }
-        ]
-      }]
-    });
-  </script>
 </head>
-<body></body>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/@decap/cms@1.0.0/dist/decap-cms.min.js"></script>
+</body>
 </html>
